@@ -1,7 +1,6 @@
 ### this mainly uses the code from here: https://colab.research.google.com/github/tensorflow/examples/blob/master/community/en/transformer_chatbot.ipynb#scrollTo=y0AqALdZCbCW
 
-# on andataset of finance questions and answers
-
+# on a dataset of finance questions and answers
 
 
 # import libraries -----
@@ -35,11 +34,11 @@ def preprocess_sentence(sentence):
 with open('./questions_2016.txt', errors='ignore') as file:
     lines = file.readlines()
 
-questions = lines[1::2]
-answers = lines[2::2]
+questions = lines[0::2]
+answers = lines[1::2]
 
-print('Sample question: {}'.format(questions[21]))
-print('Sample answer: {}'.format(answers[21]))
+print('Sample question: {}'.format(questions[1040]))
+print('Sample answer: {}'.format(answers[1040]))
 
 # Build tokenizer using tfds for both questions and answers
 tokenizer = tfds.features.text.SubwordTextEncoder.build_from_corpus(
@@ -577,8 +576,8 @@ def predict(sentence):
   predicted_sentence = tokenizer.decode(
       [i for i in prediction if i < tokenizer.vocab_size])
 
-  print('Input: {}'.format(sentence))
-  print('Output: {}'.format(predicted_sentence))
+  print('Question: {}'.format(sentence))
+  print('Answer: {}'.format(predicted_sentence))
 
   return predicted_sentence
 
@@ -595,7 +594,7 @@ for _ in range(5):
   print('')
 
 
-## It answers every question with "What is a call option?"
+## Got to start somewhere :)
 
 
 
