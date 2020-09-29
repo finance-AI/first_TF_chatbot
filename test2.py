@@ -515,9 +515,9 @@ class CustomSchedule(tf.keras.optimizers.schedules.LearningRateSchedule):
 
 sample_learning_rate = CustomSchedule(d_model=128)
 
-pl.plot(sample_learning_rate(tf.range(200000, dtype=tf.float32)))
-pl.ylabel("Learning Rate")
-pl.xlabel("Train Step")
+#pl.plot(sample_learning_rate(tf.range(200000, dtype=tf.float32)))
+#pl.ylabel("Learning Rate")
+#pl.xlabel("Train Step")
 
 
 # Compile Model------
@@ -583,23 +583,16 @@ def predict(sentence):
 
 
 output = predict('What is finance?')
-output = predict('What is the CAPM?')
+output = predict('What is a put option?')
 output = predict('How are you?')
-output = predict('What is your favorite color?')
+output = predict('What is the risk free rate?')
+output = predict('What is Apple Inc ticker symbol?')
 
-# feed the model with its previous output
-sentence = 'Risk is what?'
-for _ in range(5):
-  sentence = predict(sentence)
-  print('')
+# feed the model with its previous output---doesnt make much sense here
+# sentence = 'Risk is what?'
+# for _ in range(5):
+#   sentence = predict(sentence)
+#   print('')
 
 
 ## Got to start somewhere :)
-
-
-
-
-
-
-
-
