@@ -6,8 +6,8 @@ Feel free to help by adding questions here:
 
 It is starting to look pretty good!  The questions are user-supplied input, and the answers are from the trained AI chatbot.
 
-Question: What is a put option?
-Answer: the right to sell a specific stock for a specified period of time 
+```Question: What is a put option?```
+```Answer: the right to sell a specific stock for a specified period of time```
 
 Question: What is selling an option?
 Answer: a put option can be exercised before and up to the expiration date
