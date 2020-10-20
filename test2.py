@@ -31,7 +31,7 @@ def preprocess_sentence(sentence):
   return sentence
 
 
-with open('./questions_2016.txt', errors='ignore') as file:
+with open('../data/all_questions.txt', errors='ignore') as file:
     lines = file.readlines()
 
 questions = lines[0::2]
@@ -537,7 +537,7 @@ model.compile(optimizer=optimizer, loss=loss_function, metrics=[accuracy])
 
 # Fit!!!------
 
-EPOCHS = 20
+EPOCHS = 80
 
 model.fit(dataset, epochs=EPOCHS)
 
@@ -582,11 +582,13 @@ def predict(sentence):
   return predicted_sentence
 
 
-output = predict('What is finance?')
+output = predict('What is stock?')
 output = predict('What is a put option?')
-output = predict('How are you?')
+output = predict('What is selling an option?')
+output = predict('What is a call option?')
 output = predict('What is the risk free rate?')
 output = predict('What is Apple Inc ticker symbol?')
+output = predict('What is a protective put spread?')
 
 # feed the model with its previous output---doesnt make much sense here
 # sentence = 'Risk is what?'
