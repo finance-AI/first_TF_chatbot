@@ -41,7 +41,7 @@ print('Sample question: {}'.format(questions[1040]))
 print('Sample answer: {}'.format(answers[1040]))
 
 # Build tokenizer using tfds for both questions and answers
-tokenizer = tfds.features.text.SubwordTextEncoder.build_from_corpus(
+tokenizer = tfds.deprecated.text.SubwordTextEncoder.build_from_corpus(
     questions + answers, target_vocab_size=2**13)
 
 # Define start and end token to indicate the start and end of a sentence
@@ -589,6 +589,8 @@ output = predict('What is a call option?')
 output = predict('What is the risk free rate?')
 output = predict('What is Apple Inc ticker symbol?')
 output = predict('What is a protective put spread?')
+output = predict('What is the DuPont Identity?')
+output = predict('How do you calculate profit margin?')
 
 # feed the model with its previous output---doesnt make much sense here
 # sentence = 'Risk is what?'
