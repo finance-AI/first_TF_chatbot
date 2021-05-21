@@ -12,7 +12,7 @@ import tensorflow_datasets as tfds
 
 import os
 import re
-import numpy as np
+#import numpy as np
 
 import matplotlib.pyplot as pl
 
@@ -265,8 +265,9 @@ sample_encoder_layer = encoder_layer(
     dropout=0.3,
     name="sample_encoder_layer")
 
-tf.keras.utils.plot_model(
-    sample_encoder_layer, to_file='encoder_layer.png', show_shapes=True)
+### uncomment to plot-----
+#tf.keras.utils.plot_model(
+#    sample_encoder_layer, to_file='encoder_layer.png', show_shapes=True)
 
 
 # Encoder----
